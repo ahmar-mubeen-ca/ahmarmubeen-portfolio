@@ -1,534 +1,792 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmar Mubeen | Technology Leader</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ahmar Mubeen — Technology Leader, Software Engineering Director, Digital Banking & Cloud AI Transformation. 28+ years in fintech and enterprise engineering." />
+  <title>Ahmar Mubeen — Technology Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f3ee;
+      --accent: #c8a96e;
+      --accent-light: #e8d9b8;
+      --muted: #6b6760;
+      --border: rgba(200,169,110,0.2);
+      --card-bg: #111111;
+      --tag-bg: rgba(200,169,110,0.12);
     }
 
-    :root {
-      --primary-dark: #0f172a;
-      --secondary-dark: #1e293b;
-      --accent-gold: #f59e0b;
-      --accent-light: #e0e7ff;
-      --text-primary: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --border-color: #334155;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-      background-color: var(--primary-dark);
-      color: var(--text-primary);
-      line-height: 1.6;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    header {
-      background-color: var(--secondary-dark);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
+    /* ── NAV ── */
     nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
     }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent-gold);
+    .nav-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: 15px;
+      letter-spacing: 0.04em;
+      color: var(--accent);
     }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.3s ease;
+      font-size: 13px; font-weight: 400;
+      color: var(--muted); text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
     }
+    .nav-links a:hover { color: var(--white); }
 
-    .nav-links a:hover {
-      color: var(--accent-gold);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    section {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      color: var(--accent-gold);
-      position: relative;
-      padding-bottom: 1rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent-gold);
-    }
-
-    /* Hero Section */
+    /* ── HERO ── */
     .hero {
-      padding: 8rem 0;
-      text-align: center;
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 3rem 5rem;
+      position: relative;
+      border-bottom: 0.5px solid var(--border);
+      overflow: hidden;
     }
-
+    .hero-bg-text {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(80px, 16vw, 220px);
+      font-weight: 800;
+      color: rgba(200,169,110,0.04);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.03em;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block; width: 6px; height: 6px;
+      background: var(--accent); border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
     .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(42px, 7vw, 90px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
     }
-
-    .hero .subtitle {
-      font-size: 1.5rem;
-      color: var(--accent-gold);
-      margin-bottom: 1rem;
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+      display: block;
     }
-
-    .hero .tagline {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-      margin: 0 auto 2rem;
+    .hero-sub {
+      font-size: 16px; color: var(--muted);
+      max-width: 560px; line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
-
-    .cta-button {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      background-color: var(--accent-gold);
-      color: var(--primary-dark);
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 2px;
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+      border: none;
+    }
+    .btn-gold {
+      background: var(--accent); color: var(--black);
+    }
+    .btn-gold:hover { background: var(--accent-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 0.5px solid rgba(245,243,238,0.3);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .hero-stats {
+      position: absolute; right: 3rem; bottom: 5rem;
+      display: flex; flex-direction: column; gap: 2rem;
+    }
+    .hero-stat { text-align: right; }
+    .hero-stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 36px; font-weight: 700;
+      color: var(--accent); line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 11px; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase;
     }
 
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+    /* ── SECTION COMMONS ── */
+    section { padding: 5rem 3rem; border-bottom: 0.5px solid var(--border); }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-eyebrow::after {
+      content: '';
+      display: block; height: 0.5px;
+      width: 48px; background: var(--accent);
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
     }
 
-    /* About Section */
+    /* ── ABOUT ── */
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
     }
-
-    .about-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--accent-gold);
-    }
-
-    .about-content p {
-      margin-bottom: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    .about-body { font-size: 15px; color: rgba(245,243,238,0.75); line-height: 1.9; }
+    .about-body p + p { margin-top: 1.25rem; }
+    .about-body strong { color: var(--white); font-weight: 500; }
+    .highlight-box {
+      background: var(--card-bg);
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--accent);
+      padding: 1.5rem 1.75rem;
+      border-radius: 2px;
       margin-top: 2rem;
     }
-
-    .stat-item {
-      background-color: var(--secondary-dark);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border-left: 4px solid var(--accent-gold);
+    .highlight-box p {
+      font-size: 14px; color: var(--muted);
+      font-style: italic; line-height: 1.8;
     }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent-gold);
+    .awards-list { display: flex; flex-direction: column; gap: 12px; }
+    .award-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 1rem 1.25rem;
+      background: var(--card-bg);
+      border: 0.5px solid var(--border);
+      border-radius: 2px;
     }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-top: 0.5rem;
+    .award-icon {
+      font-size: 18px; flex-shrink: 0; margin-top: 2px;
     }
+    .award-title { font-size: 14px; font-weight: 500; color: var(--white); }
+    .award-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-    /* Experience Section */
-    .experience-item {
-      background-color: var(--secondary-dark);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 8px;
-      border-left: 4px solid var(--accent-gold);
-      transition: transform 0.3s ease;
-    }
-
-    .experience-item:hover {
-      transform: translateX(5px);
-    }
-
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      margin-bottom: 1rem;
-    }
-
-    .experience-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .experience-company {
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
-
-    .experience-date {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .experience-description {
-      color: var(--text-secondary);
-      margin-top: 1rem;
-      line-height: 1.8;
-    }
-
-    /* Skills Section */
+    /* ── SKILLS ── */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .skill-category {
-      background-color: var(--secondary-dark);
-      padding: 2rem;
-      border-radius: 8px;
-      border-top: 3px solid var(--accent-gold);
-    }
-
-    .skill-category h3 {
-      color: var(--accent-gold);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .skill-list {
-      list-style: none;
-    }
-
-    .skill-list li {
-      padding: 0.5rem 0;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-    }
-
-    .skill-list li::before {
-      content: '▸';
-      color: var(--accent-gold);
-      margin-right: 0.75rem;
-    }
-
-    /* Contact Section */
-    .contact-grid {
-      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      gap: 1px;
+      border: 0.5px solid var(--border);
+    }
+    .skill-block {
+      padding: 1.75rem;
+      background: var(--card-bg);
+      transition: background 0.2s;
+    }
+    .skill-block:hover { background: #161616; }
+    .skill-block-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px; font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 12px;
+      background: var(--tag-bg);
+      color: rgba(245,243,238,0.75);
+      border: 0.5px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 999px;
     }
 
-    .contact-item {
-      background-color: var(--secondary-dark);
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2.5rem;
+      padding: 2.5rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .exp-item:first-child { padding-top: 0; }
+    .exp-meta {}
+    .exp-dates {
+      font-size: 12px; color: var(--muted);
+      letter-spacing: 0.04em; margin-bottom: 4px;
+    }
+    .exp-company {
+      font-size: 13px; font-weight: 500;
+      color: var(--accent);
+    }
+    .exp-location { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .exp-content {}
+    .exp-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px; font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .exp-desc {
+      font-size: 14px; color: rgba(245,243,238,0.7);
+      line-height: 1.8; margin-bottom: 1rem;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .exp-bullets li {
+      font-size: 13px; color: rgba(245,243,238,0.65);
+      padding-left: 1rem; position: relative; line-height: 1.6;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--accent); font-size: 11px; top: 3px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-intro {
+      font-size: 15px; color: var(--muted);
+      max-width: 600px; margin-bottom: 3rem; line-height: 1.8;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      border: 0.5px solid var(--border);
+    }
+    .project-card {
+      background: var(--card-bg);
       padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
+      display: flex; flex-direction: column;
+      transition: background 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .project-card:hover { background: #161616; }
+    .project-card.coming-soon {
+      opacity: 0.5;
+      border: 0.5px dashed rgba(200,169,110,0.2);
+    }
+    .project-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 48px; font-weight: 800;
+      color: rgba(200,169,110,0.08);
+      position: absolute; top: 1rem; right: 1.5rem;
+      line-height: 1;
+    }
+    .project-status {
+      font-size: 11px; font-weight: 500;
+      color: var(--accent); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .project-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px; font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .project-desc {
+      font-size: 13px; color: rgba(245,243,238,0.6);
+      line-height: 1.7; flex: 1; margin-bottom: 1.25rem;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tag {
+      font-size: 11px;
+      background: var(--tag-bg);
+      color: var(--accent);
+      border: 0.5px solid var(--border);
+      padding: 3px 10px; border-radius: 999px;
+    }
+    .project-link {
+      margin-top: 1rem;
+      font-size: 12px; color: var(--accent);
+      text-decoration: none; letter-spacing: 0.06em;
+      font-weight: 500;
     }
 
-    .contact-label {
-      color: var(--accent-gold);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
     }
-
-    .contact-value {
-      color: var(--text-secondary);
-      word-break: break-all;
+    .contact-tagline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700; line-height: 1.3;
+      margin-bottom: 1.5rem;
     }
-
-    .contact-value a {
-      color: var(--accent-light);
-      text-decoration: none;
-      transition: color 0.3s ease;
-      white-space: nowrap;
+    .contact-tagline span { color: var(--accent); }
+    .contact-body {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.8; margin-bottom: 2rem;
     }
-
-    .contact-value a:hover {
-      color: var(--accent-gold);
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--white);
+      font-size: 14px;
+      padding: 0.75rem 1rem;
+      background: var(--card-bg);
+      border: 0.5px solid var(--border);
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
     }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-link-icon {
+      width: 28px; height: 28px;
+      background: var(--tag-bg);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--accent); flex-shrink: 0;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--card-bg);
+      border: 0.5px solid var(--border);
+      border-radius: 2px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--accent); }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: var(--muted); }
+    .contact-form textarea { height: 120px; resize: none; }
 
-    /* Footer */
+    /* ── FOOTER ── */
     footer {
-      background-color: var(--secondary-dark);
-      padding: 2rem 0;
-      text-align: center;
-      color: var(--text-secondary);
-      border-top: 1px solid var(--border-color);
+      padding: 2rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
-    footer a {
-      color: var(--accent-light);
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .footer-left {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px; font-weight: 600;
+      color: var(--accent);
     }
+    .footer-right { font-size: 12px; color: var(--muted); }
 
-    footer a:hover {
-      color: var(--accent-gold);
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* Responsive */
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .experience-header {
-        flex-direction: column;
-      }
-
-      .experience-date {
-        margin-top: 0.5rem;
-      }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 0 1.5rem 4rem; }
+      .hero-stats { display: none; }
+      section { padding: 3.5rem 1.5rem; }
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 8px; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav class="container">
-      <div class="logo">Ahmar Mubeen</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Ahmar Mubeen</h1>
-      <p class="subtitle">Technology Leader | Software Engineering | Digital Banking</p>
-      <p class="tagline">28+ years driving digital transformation in fintech, cloud modernization, and AI-driven innovation. Executive advisor translating technology strategy into measurable business results.</p>
-      <a href="#contact" class="cta-button">Get in Touch</a>
+  <!-- NAV -->
+  <nav>
+    <span class="nav-name">Ahmar Mubeen</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg-text">ENGINEER</div>
+    <div class="hero-tag">Available for advisory & leadership roles</div>
+    <h1>
+      Technology<br>
+      <em>Leader.</em>
+    </h1>
+    <p class="hero-sub">
+      28+ years building and scaling enterprise software. Director of Digital Engineering at Citigroup, leading 300+ engineers across fintech platforms serving 90M+ customers.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-gold">Get in touch</a>
+      <a href="#experience" class="btn btn-outline">View experience</a>
     </div>
-  </section>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">28+</div>
+        <div class="hero-stat-label">Years in tech</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">300+</div>
+        <div class="hero-stat-label">Engineers led</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">90M+</div>
+        <div class="hero-stat-label">Customers served</div>
+      </div>
+    </div>
+  </div>
 
-  <!-- About Section -->
+  <!-- ABOUT -->
   <section id="about">
-    <div class="container">
-      <h2 class="section-title">About</h2>
-      <div class="about-grid">
-        <div class="about-content">
-          <h3>Executive Summary</h3>
-          <p>Software engineering leader with 28+ years in digital banking applications and leadership. Specialized in modernizing enterprise systems, adopting cloud and AI-driven productivity, and enhancing platform resiliency.</p>
-          <p>Currently Director of Digital Engineering at Citigroup, leading 30+ scrum teams (300+ engineers) on consumer and commercial digital banking products supporting 90M+ customer accounts across North America.</p>
-          <p>Trusted advisor to C-suite executives, translating complex technology strategy into tangible business outcomes: 25% YoY digital growth, 70% deployment cycle reduction, and 99.95%+ platform availability.</p>
+    <div class="section-eyebrow">About me</div>
+    <div class="about-grid fade-in">
+      <div>
+        <h2 class="section-title">Software engineer<br>turned executive.</h2>
+        <div class="about-body">
+          <p>
+            I'm a <strong>technology executive and software engineering leader</strong> with 28+ years of experience in digital banking, fintech platforms, and large-scale cloud transformation. I've spent my career at the intersection of engineering excellence and business impact.
+          </p>
+          <p>
+            At <strong>Citigroup</strong>, I lead the Digital Engineering organization for Citi Retail Services — responsible for the Fusion Digital Platform serving 90M+ credit card accounts across 30+ iconic brands including Best Buy, Macy's, The Home Depot, and ExxonMobil.
+          </p>
+          <p>
+            I'm passionate about <strong>AI-driven engineering productivity</strong>, cloud-native architecture, and building high-performing global engineering teams that deliver measurable business outcomes.
+          </p>
+          <div class="highlight-box">
+            <p>"Trusted advisor to C-suite executives — translating complex technology strategy into tangible business results across regulated financial environments."</p>
+          </div>
         </div>
-        <div class="stats">
-          <div class="stat-item">
-            <div class="stat-number">28+</div>
-            <div class="stat-label">Years of Experience</div>
+      </div>
+      <div>
+        <div class="awards-list">
+          <div class="award-item">
+            <div class="award-icon">⚡</div>
+            <div>
+              <div class="award-title">US Patent 12,443,787 B1</div>
+              <div class="award-sub">Methods and Systems for Interactive Data Input</div>
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">300+</div>
-            <div class="stat-label">Engineers Led</div>
+          <div class="award-item">
+            <div class="award-icon">🏆</div>
+            <div>
+              <div class="award-title">Citi Leaders in Excellence Award</div>
+              <div class="award-sub">Top 1% recognition</div>
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">1,100+</div>
-            <div class="stat-label">APIs Delivered</div>
+          <div class="award-item">
+            <div class="award-icon">☁️</div>
+            <div>
+              <div class="award-title">AWS Certified AI Practitioner</div>
+              <div class="award-sub">2026 · Amazon Web Services</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">🎓</div>
+            <div>
+              <div class="award-title">Wharton Executive Education</div>
+              <div class="award-sub">Leading Customer-Centric Growth · 2021</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">🎓</div>
+            <div>
+              <div class="award-title">Executive Leadership Certificate</div>
+              <div class="award-sub">SMU Cox School of Business · 2018</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-icon">📜</div>
+            <div>
+              <div class="award-title">M.S. Computer Science</div>
+              <div class="award-sub">Texas Tech University · 1996</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
-      
-      <div class="experience-item">
-        <div class="experience-header">
-          <div>
-            <div class="experience-title">Director, Digital Engineering</div>
-            <div class="experience-company">Citigroup, US Consumer Cards Technology</div>
-          </div>
-          <div class="experience-date">2012 – Present</div>
-        </div>
-        <div class="experience-description">
-          Head of Engineering for Citi Retail Services Technology. Accountable for delivering consumer and commercial digital banking products across North America. Built and scaled a global digital engineering organization of 300+ engineers. Led large-scale cloud transformation: modernized legacy monoliths into 200+ microservices and 1,100+ APIs using Angular, Spring Boot, OpenShift, and CI/CD pipelines. Championed AI-assisted engineering adoption delivering up to 30% productivity gains. Drove measurable outcomes: 25% YoY digital growth, 70% deployment cycle reduction, &lt;1.5% release failure rates, and 99.95%+ platform availability.
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-header">
-          <div>
-            <div class="experience-title">Sr. Software Development Manager</div>
-            <div class="experience-company">Oracle Corporation, Communications Global Business Unit</div>
-          </div>
-          <div class="experience-date">2008 – 2012</div>
-        </div>
-        <div class="experience-description">
-          Set up offshore product engineering group supporting Oracle Communications OSS platforms. Managed $1.2M program budget and teams of 30–40 engineers. Introduced quality frameworks reducing defect leakage by 35% and improving GA predictability.
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-header">
-          <div>
-            <div class="experience-title">System Integration Specialist</div>
-            <div class="experience-company">JPMorgan Chase, Treasury & Securities Services</div>
-          </div>
-          <div class="experience-date">2006 – 2007</div>
-        </div>
-        <div class="experience-description">
-          Led system integration and delivery of the Central Price Capture (CPC) platform, an enterprise securities pricing hub. Drove end-to-end delivery lifecycle in partnership with business leaders, delivering mission-critical platforms on time and within budget.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
+  <!-- SKILLS -->
   <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Core Competencies</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Enterprise Architecture</h3>
-          <ul class="skill-list">
-            <li>Enterprise-Scale Fintech Transformation</li>
-            <li>Cloud & Hybrid Engineering at Scale</li>
-            <li>API-First Architectures</li>
-            <li>Platform Modernization</li>
-          </ul>
+    <div class="section-eyebrow">Core competencies</div>
+    <h2 class="section-title">What I bring<br>to the table.</h2>
+    <div class="skills-grid fade-in">
+      <div class="skill-block">
+        <div class="skill-block-title">Engineering Leadership</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Global Teams</span>
+          <span class="skill-tag">Agile at Scale</span>
+          <span class="skill-tag">Scrum</span>
+          <span class="skill-tag">DevSecOps</span>
+          <span class="skill-tag">SRE</span>
+          <span class="skill-tag">Talent Development</span>
         </div>
-        <div class="skill-category">
-          <h3>Engineering Leadership</h3>
-          <ul class="skill-list">
-            <li>Global Software Engineering Leadership</li>
-            <li>Agile at Scale & Operating Models</li>
-            <li>Talent Development & Succession Planning</li>
-            <li>Executive Influence & Change Leadership</li>
-          </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Cloud & Architecture</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">OpenShift</span>
+          <span class="skill-tag">Microservices</span>
+          <span class="skill-tag">API-First</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">CI/CD</span>
         </div>
-        <div class="skill-category">
-          <h3>Technical Excellence</h3>
-          <ul class="skill-list">
-            <li>AI-Driven Productivity & Automation</li>
-            <li>Dev SecOps & SRE Practices</li>
-            <li>High-Availability Platforms</li>
-            <li>Quality Engineering & CI/CD</li>
-          </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Technology Stack</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Angular</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Apigee</span>
+          <span class="skill-tag">HTML/CSS/JS</span>
+          <span class="skill-tag">SQL</span>
         </div>
-        <div class="skill-category">
-          <h3>Risk & Governance</h3>
-          <ul class="skill-list">
-            <li>Risk & Compliance Management</li>
-            <li>Regulatory-Ready Delivery</li>
-            <li>Portfolio Strategy & Financial Governance</li>
-            <li>Vendor Management</li>
-          </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">AI & Productivity</div>
+        <div class="skill-tags">
+          <span class="skill-tag">GitHub Copilot</span>
+          <span class="skill-tag">Devin.AI</span>
+          <span class="skill-tag">Citi Stylus</span>
+          <span class="skill-tag">AI Code Review</span>
+          <span class="skill-tag">Prompt Engineering</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Fintech Domain</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Digital Banking</span>
+          <span class="skill-tag">Credit Cards</span>
+          <span class="skill-tag">Open Banking</span>
+          <span class="skill-tag">Regulatory Compliance</span>
+          <span class="skill-tag">Risk Management</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Strategy & Governance</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Technology Strategy</span>
+          <span class="skill-tag">Portfolio Management</span>
+          <span class="skill-tag">P&amp;L Accountability</span>
+          <span class="skill-tag">Vendor Management</span>
+          <span class="skill-tag">PMP</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-eyebrow">Career</div>
+    <h2 class="section-title">28 years of<br>building at scale.</h2>
+    <div class="exp-list fade-in">
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-dates">2012 — Present</div>
+          <div class="exp-company">Citigroup</div>
+          <div class="exp-location">Dallas, TX</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">Director, Digital Engineering</div>
+          <div class="exp-desc">Head of Engineering for Citi Retail Services Technology — accountable for digital online banking products across North America, supporting ~90M customer credit card accounts for 30+ iconic brands.</div>
+          <ul class="exp-bullets">
+            <li>Built and scaled a global engineering org of 300+ engineers across 30+ scrum teams with ~$40M annual budget</li>
+            <li>Modernized legacy monoliths into 200+ microservices and 1,100+ APIs on Angular, Spring Boot, OpenShift &amp; Apigee</li>
+            <li>Drove ~25% YoY growth in digital adoption and reduced deployment cycles by ~70%</li>
+            <li>Achieved 99.95%+ platform availability with fewer than 25 annual P1 incidents</li>
+            <li>Championed AI-assisted engineering (GitHub Copilot, Devin.AI) delivering up to 30% productivity gains</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-dates">2008 — 2012</div>
+          <div class="exp-company">Oracle Corporation</div>
+          <div class="exp-location">Hyderabad, India</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">Sr. Software Development Manager</div>
+          <div class="exp-desc">Established and led offshore product engineering group for Oracle Communications OSS platforms.</div>
+          <ul class="exp-bullets">
+            <li>Managed $1.2M program budget and teams of 30–40 engineers</li>
+            <li>Introduced process frameworks reducing defect leakage by 35%</li>
+            <li>Delivered industry-mandated quality releases on schedule</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-dates">2006 — 2007</div>
+          <div class="exp-company">JPMorgan Chase</div>
+          <div class="exp-location">Dallas, TX</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">System Integration Specialist</div>
+          <div class="exp-desc">Led system integration and delivery of the Central Price Capture (CPC) platform — an enterprise securities pricing hub for global JPMorgan accounting and treasury systems.</div>
+          <ul class="exp-bullets">
+            <li>Drove end-to-end delivery lifecycle across requirements, architecture, coding, testing, and release</li>
+            <li>Shaped enterprise data and integration architecture for pricing data integrity</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-dates">1996 — 2006</div>
+          <div class="exp-company">Early Career</div>
+          <div class="exp-location">Dallas–Fort Worth, TX</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">Progressive Engineering Roles</div>
+          <ul class="exp-bullets">
+            <li>Sabre Corporation, Airline Solutions — Sr. Engineer (2005–2006)</li>
+            <li>Citigroup, Cards Technology — Senior Lead Analyst (2003–2005)</li>
+            <li>Software Architects Inc. — Managing Technical Consultant (1999–2003)</li>
+            <li>Noblestar Systems — Sr. Programmer Analyst (1998–1999)</li>
+            <li>Analysts International Corp (AIC) — Programmer Analyst (1996–1999)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-eyebrow">Projects</div>
+    <h2 class="section-title">Things I'm<br>building.</h2>
+    <p class="projects-intro">
+      Beyond my corporate work, I explore personal projects at the intersection of AI, fintech, and developer tooling. More coming soon.
+    </p>
+    <div class="projects-grid fade-in">
+      <div class="project-card">
+        <div class="project-num">01</div>
+        <div class="project-status">Live</div>
+        <div class="project-name">ahmarmubeen.com</div>
+        <div class="project-desc">This portfolio site — built with plain HTML/CSS, deployed via Cloudflare Pages, connected to GitHub for continuous deployment.</div>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">Cloudflare Pages</span>
+          <span class="project-tag">GitHub</span>
+        </div>
+      </div>
+      <div class="project-card coming-soon">
+        <div class="project-num">02</div>
+        <div class="project-status">Coming soon</div>
+        <div class="project-name">Project Two</div>
+        <div class="project-desc">Details coming soon. Working on something exciting in the AI + fintech space.</div>
+        <div class="project-tags">
+          <span class="project-tag">TBD</span>
+        </div>
+      </div>
+      <div class="project-card coming-soon">
+        <div class="project-num">03</div>
+        <div class="project-status">Coming soon</div>
+        <div class="project-name">Project Three</div>
+        <div class="project-desc">More projects in development. Check back soon.</div>
+        <div class="project-tags">
+          <span class="project-tag">TBD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:ahmar@ahmarmubeen.com">ahmar@ahmarmubeen.com</a></div>
+    <div class="section-eyebrow">Contact</div>
+    <div class="contact-grid fade-in">
+      <div>
+        <h2 class="contact-tagline">Let's build<br><span>something great.</span></h2>
+        <p class="contact-body">
+          Open to advisory roles, board positions, speaking engagements, and executive leadership opportunities in fintech, cloud, and AI-driven engineering.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:ahmar.mubeen@gmail.com" class="contact-link">
+            <div class="contact-link-icon">@</div>
+            ahmar.mubeen@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/ahmar-mubeen" target="_blank" class="contact-link">
+            <div class="contact-link-icon">in</div>
+            linkedin.com/in/ahmar-mubeen
+          </a>
+          <a href="https://github.com/ahmar-mubeen-ca" target="_blank" class="contact-link">
+            <div class="contact-link-icon">&lt;/&gt;</div>
+            github.com/ahmar-mubeen-ca
+          </a>
         </div>
-        <div class="contact-item">
-          <div class="contact-label">Phone</div>
-          <div class="contact-value"><a href="tel:+14085989850">(408) 598-9850</a></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Dallas/Fort Worth, TX</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value"><a href="https://linkedin.com/in/ahmar-mubeen" target="_blank">linkedin.com/in/ahmar-mubeen</a></div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <input type="text" placeholder="Your name" />
+          <input type="email" placeholder="Your email" />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Your message"></textarea>
+          <button class="btn btn-gold" style="align-self: flex-start;">Send message</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p>&copy; 2026 Ahmar Mubeen. All rights reserved.</p>
-    </div>
+    <span class="footer-left">Ahmar Mubeen</span>
+    <span class="footer-right">© 2026 · ahmarmubeen.com · Dallas–Fort Worth, TX</span>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
