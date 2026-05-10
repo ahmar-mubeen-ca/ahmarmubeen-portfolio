@@ -296,6 +296,7 @@
       color: var(--accent-light);
       text-decoration: none;
       transition: color 0.3s ease;
+      white-space: nowrap;
     }
 
     .contact-value a:hover {
@@ -306,9 +307,19 @@
     footer {
       background-color: var(--secondary-dark);
       padding: 2rem 0;
-      text-align: center;
+      text-align: right;
       color: var(--text-secondary);
       border-top: 1px solid var(--border-color);
+    }
+
+    footer a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent-gold);
     }
 
     /* Responsive */
@@ -516,7 +527,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Ahmar Mubeen. All rights reserved. | <a href="https://ahmarmubeen.com" target="_blank" style="color: var(--accent-light); text-decoration: none; transition: color 0.3s ease;">ahmarmubeen.com</a></p>
+      <p>&copy; 2026 Ahmar Mubeen. All rights reserved. | <a href="https://ahmarmubeen.com" target="_blank">ahmarmubeen.com</a></p>
     </div>
   </footer>
 </body>
