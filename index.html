@@ -782,12 +782,13 @@
         </div>
       </div>
       <div>
-        <div class="contact-form">
-          <input type="text" placeholder="Your name" />
-          <input type="email" placeholder="Your email" />
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder="Your message"></textarea>
-          <button class="btn btn-gold" style="align-self: flex-start;">Send message</button>
+        <div class="contact-form" id="contactForm">
+          <input type="text" placeholder="Your name" id="contactName" />
+          <input type="email" placeholder="Your email" id="contactEmail" />
+          <input type="text" placeholder="Subject" id="contactSubject" />
+          <textarea placeholder="Your message" id="contactMessage"></textarea>
+          <button type="submit" class="btn btn-gold" style="align-self: flex-start;" id="sendButton">Send message</button>
+          <div id="formFeedback" style="margin-top: 1rem; font-size: 14px; color: var(--accent); display: none;"></div>
         </div>
       </div>
     </div>
@@ -809,6 +810,48 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Contact form handler
+    const contactForm = document.getElementById('contactForm');
+    const sendButton = document.getElementById('sendButton');
+    const formFeedback = document.getElementById('formFeedback');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const subject = document.getElementById('contactSubject').value;
+      const message = document.getElementById('contactMessage').value;
+
+      if (!name || !email || !subject || !message) {
+        formFeedback.textContent = 'Please fill in all fields.';
+        formFeedback.style.color = 'var(--muted)';
+        formFeedback.style.display = 'block';
+        return;
+      }
+
+      // Construct mailto URL
+      const mailtoUrl = `mailto:ahmar@ahmarmubeen.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\n${message}`
+      )}`;
+
+      // Open email client
+      window.location.href = mailtoUrl;
+
+      // Show success message
+      formFeedback.textContent = 'Email client opened! Please send the message.';
+      formFeedback.style.color = 'var(--accent)';
+      formFeedback.style.display = 'block';
+
+      // Clear form
+      contactForm.reset();
+
+      // Hide feedback after 5 seconds
+      setTimeout(() => {
+        formFeedback.style.display = 'none';
+      }, 5000);
+    });
   </script>
 
 </body>
